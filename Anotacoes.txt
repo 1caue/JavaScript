@@ -1,0 +1,160 @@
+O que faz o JavaScript?
+= Basicamente tudo
+
+Cliente x Server 
+Ao acessar Qualquer rede social você está acessando o lado da rede "Server" da internet
+
+A5
+
+• exemplo das variáveis com vagas de carro:
+vaga a1 = carro1
+
+- apenas 1 sinal de '=' tem valor 'recebe' ou seja vaga a1 recebe carro1 
+
+• subistituindo o carro1 por carro2 na mesma variável
+vaga a1 = carro1
+     a1 = carro2
+
+• para deixar o valor de a1 nulo na mesma variável
+vaga a1 = carro1
+     a1 = carro2
+     a1 = null 
+
+• Agora em JavaScript
+var n1 = 5
+var n2 = 8.5
+var n3 = 15 
+
+Outro exemplo em strings:
+
+var s1 = 'JavaScript'
+var s2 =  'CeV'
+var s3 = 'Cauê'
+
+-----------------------
+A6 = DataTypes
+Nessa aula falaremos sobre 'numbers' e 'strigs'
+
+O sinal de + em Js tem sinal de concatenação
+Ex:
+var nome = window.prompt('Qual é Seu nome?')
+alert('É um grande prazer te conhecer' + nome)
+
+Ele irá mostrar no navegador da pessoa o nome digitado 
+Dessa maneira abaixo não funociona, pois está implicito o ',', não o sinal de +: 
+var nome = window.prompt('Qual é Seu nome?')
+alert('É um grande prazer te conhecer', nome)
+
+Diferenciação de String para Number
+
+var n1 = window.prompt('Digite um Número: ') // Str
+        var n2 = window.prompt('Digite outro Número: ') // Str
+        var s = n1 + n2
+        window.alert('A soma dos valores é ' + s) // Concatenação
+        // (number + number) Para adição
+        // (string + string) Para concatenação    
+
+Para fazer a transição de str para number basta:
+- Number.parseInt(n) 
+
+Se caso quiser transformar a váriavel de outro valor para um número inteiro basta:
+- Number.parseFloat(n)
+
+Para Simplificar os dois casos onde n poderá valer um valor inteiro ou float basta:
+- Number(window.prompt('Digite um Número: '))
+
+Para converter float ou int para str:
+n.toString ou String(n)
+
+Formatação de Strings:
+- > var s = 'JavaScript'
+    undefined
+  > s
+    'JavaScript'
+  
+  > 'Eu estou estudando s' 
+    'Eu estou estudando s'
+  
+  > 'Eu estou estudando ' + s
+    'Eu estou estudando JavaScript'
+
+Utilizando contatenação:
+	> nome = 'caue'
+	'caue'
+	> idade = 19
+	19
+	> nota = 10
+	10
+	> nome
+	'caue'
+	> idade
+	19
+	> nota
+	10
+	> 'O aluno ' + nome + ' com ' + idade + ' anos tirou ' + nota
+	'O aluno caue com 19 anos tirou 10'
+	> 'O aluno ' + nome + ' com ' + idade + ' anos tirou ' + nota
+	'O aluno caue com 19 anos tirou 10'
+
+Utilizando da melhor maneira:
+	> `O aluno ${nome} com ${idade} anos tirou ${nota}`
+  	  'O aluno caue com 19 anos tirou 10'
+ 	   Obs: Lembrar sempre nas crases caso for utilizar dessa maneira, essa maneira 
+      	        não é aplicável utilizando '' ou "".  
+
+var s = 'JavaScript'
+
+O 's.length' é o script usado para verificar quantos caracteres há na string
+
+O 's.toUpperCase()' é o script usado para jogar todas as letras para MAIÚSCULAS
+Já o 's.toLowerCase()' joga todas as letras para MINÚSCULAS
+
+---
+> var n1 = 1545.5
+undefined
+
+Utilizando o metódo:
+> n1.toFixed(2)
+'1545.50'
+Podemos selecionar quantas casas decimais queremos após a virgula
+
+Já utilizando o metódo:
+> n1.toFixed(2).replace('.', ',')
+'1545,50'
+Podemos repor a vírgula no lugar do ponto
+
+Já o metoódo:
+> n1.toLocaleString('pt-Br', {style: 'currency', currency: 'BRL'})
+'R$ 1.545,50'
+Faz com que a variável n1 seja convertida para o valor de moeda do brasil
+
+----
+A7 = Operadores(pt.1)]
+
+Operadores Aritmédicos no Js;
++, -, *, /, %, **
+Todos operádores listados acima são operadores binários operadores que 
+precisam de dois operandos;
+
+5 + 2 = 7
+5 - 2 = 3
+5 * 2 = 10
+5 / 2 = 2.5
+5 % 2 = 1
+5 ** 2 = 25
+
+Ordem de Precedência dos Operadores em JavaScript;
+
+1.()        |
+2.**        | 
+3.*, /, %   |
+4.+, -      ↓  
+
+Atribuição simples dos Operadores;
+
+var a = 5 + 3 - - - - - -|8| 
+var b = a % 5 - - - - - -|3|
+var c = 5 * b ** 2 - - - |45|
+var d = 10 - a / 2 - - - |6|
+var e = 6 * 2 / d - - - -|2|
+var f = b % e + 4 / 3 - -|3|
