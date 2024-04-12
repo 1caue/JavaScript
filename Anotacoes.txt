@@ -158,3 +158,39 @@ var c = 5 * b ** 2 - - - |45|
 var d = 10 - a / 2 - - - |6|
 var e = 6 * 2 / d - - - -|2|
 var f = b % e + 4 / 3 - -|3|
+
+Auto-atribuições;
+var n = 3
+n = n + 4 ou n += 4 || n aqui valerá 7
+n = n - 5 ou n -= 5 || n aqui valerá 2
+n = n * 4 ou n *= 4 || n aqui valerá 8
+n = n / 2 ou n /= 2 || n aqui valerá 4
+n = n ** 2 ou n **= 2 || n aqui valerá 16
+n = n % 5 ou n %= 5 || n aqui valerá 1 
+
+Incremento;
+var x = 5  |5|
+x = x + 1  |6|
+x = x - 1  |5|
+
+Utilizando o Incremento ficará assim:
+
+var x = 5 |5|
+x = x ++  |6|
+x = x --  |5|
+
+> var n = 10
+ undefined
+> n
+ 10
+> n ++
+ 10
+> n
+ 11
+> n --
+ 11
+> n
+ 10
+
+-------
+A8 Operadores pt.2
