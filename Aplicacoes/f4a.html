@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,20 @@
         body {
             font: normal 20pt arial;
         }
-
     </style>
 </head>
+
 <body>
     <script>
         // formatando strings
         var nome = window.prompt('Qual é seu nome?')
         var idade = window.prompt('Quantos anos você tem?')
 
-        document.write(`Olá <strong>${nome}</strong>!, Seu nome tem ${nome.length} Letras e você tem ${idade} Anos</br>`)
+        document.write(`Olá <strong>${nome}</strong>!, Seu nome tem ${nome.length} Letras!</br>`)
+        document.write(`Você tem ${idade} Anos</br>`)
         document.write(`Seu Nome em maiúsculas é <strong>${nome.toUpperCase()}</strong>!</br>`)
         document.write(`Seu Nome em minúsculas é <strong>${nome.toLowerCase()}</strong>!`)
     </script>
 </body>
+
 </html>
