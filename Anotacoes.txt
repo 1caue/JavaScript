@@ -336,6 +336,7 @@ Ordem deles;
 Operador ternário:
 ?, :
 true ? true : false
+
 ex:
 média >= 7.0 ? "Aprovado" : "Reprovado" // Se a média for maior ou igual o valor será "Aprovado", 
                                         // Caso contrário será "Reprovado"
@@ -357,3 +358,70 @@ Node.js:
   undefined                              // Caso contrário Mostre "Menor"
 > r
   'Maior'
+
+A09 - Introdução ao DOM;
+
+O que é o DOM?
+DOM é o acrônimo para Document Object Model, Modelo de objetos para documentos
+
+Árvore DOM:
+          window
+            |
+    |-------|---------|
+location  document  history 
+            |
+           html
+            | 
+        |--------|                 
+       head     body
+  |-----|        |      
+meta  title      |
+            |----|---|---|
+            h1   p   p  div
+                     |
+                   strong
+
+Nessa estrutura hierárquica os arquivos que estão em baixo, são CHILD e os que estão
+em cima são parents
+ex:
+html e parent de document
+porém head é child dele
+
+Selecionando:
+por Marca
+   |
+getElementsByTagName()
+ex:
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
+    <div>Clique em mim</div>
+    <script>
+      var p1 = window.document.getElementsByTagName('p')[0] // Irá selecionar o primeiro <p>
+      window.document.write(p1.innerText)
+    </script>
+
+por ID
+   |
+getElementById()
+
+por Nome
+   |
+getElementByName()
+
+por Classe
+   | 
+getElementsByClassName()
+
+por Seletor
+
+
+Anotações de códigos:
+	var corpo = window.document.body // seleciona o corpo do html
+        var p1 = window.document.getElementsByTagName('p')[1] // seleciona o 'p' selecionado na caixa '[]'
+        
+        corpo.style.background = 'black' // altera a cor do fundo do site
+        p1.style.color = 'blue' // altera a cor do 'p1'
+        
+        window.document.write('Está escrito assim ' + p1.innerText) // Printando no site o valor de p1
+----
+        
