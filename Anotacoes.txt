@@ -413,7 +413,9 @@ por Classe
 getElementsByClassName()
 
 por Seletor
-
+   |
+querySelector()
+querySelectorAll()
 
 Anotações de códigos:
 	var corpo = window.document.body // seleciona o corpo do html
@@ -424,4 +426,36 @@ Anotações de códigos:
         
         window.document.write('Está escrito assim ' + p1.innerText) // Printando no site o valor de p1
 ----
-        
+
+Toda classe no js é representada por um "."
+E toda div é representada por uma "#"
+
+pegar a url do doc:
+function sayHello(){ var url = window.location.href.toString(); alert(url); } sayHello();
+
+-------
+Aula 10 | Eventos DOM
+
+Eventos DOM;
+       <DIV>
+mousecenter | mousemove
+mousedown   | mouseup
+click       | mouseout
+
+Para disparar esses eventos;	
+function ação(parâmetro){
+	bloco
+}
+
+Ex:
+<div id="area" onclick="clicar()">
+        Interaja...
+    </div>
+    <script>
+        function clicar() { // criando função para clicar no elemento(div) definida acima
+            var a = window.document.getElementById('area') // capturando o elemento da div pelo id 
+            a.innerText = 'clicou' // Configurando ação para clique
+        }
+
+O elemento contido no getElementById tem que ser exatamente igual o da div definido anteriormente,
+o nome da function também 
