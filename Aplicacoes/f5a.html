@@ -7,7 +7,7 @@
     <title>Primeiros passos com DOM</title>
     <style>
         body {
-            background: rgb(186, 186, 221);
+            background: rgb(68, 125, 199);
             color: white;
             font: normal 18pt Arial;
         }
@@ -18,17 +18,26 @@
     <h1>Incianado estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
-    <div id="msg">Clique em mim</div>
+    <div id="msg">Id 1</div>
+    <div class="msg2">Class 1</div>
     <script>
-        var corpo = window.document.body
         var p1 = window.document.getElementsByTagName('p')[1]
-        /*
-        var d = window.document.getElementById('msg')
-        d.innerText = 'Estou aguardando...'
-        d.style.background = 'green'
-        */
-        var d = window.document.getElementsByName('msg')[0]
-        d.innerText = 'olá'
+        var p2 = window.document.getElementsByTagName('p')[0]
+        var id1 = window.document.querySelector("div#msg")
+        var class1 = window.document.querySelector("div.msg2")
+
+        id1.style.color = 'white'
+        id1.style.background = 'blue'
+
+        p2.style.color = 'white'
+
+
+        class1.style.color = 'white'
+        class1.style.background = 'red'
+
+        p1.style.color = 'black'
+        p1.style.background = 'grey'
+
     </script>
 </body>
 
