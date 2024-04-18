@@ -23,13 +23,13 @@
 </head>
 
 <body>
-    <h1>Somando valores</h1>
-    <input type="number" name="txtn1" id="txtn1">
+    <h1>Realizando cálculos</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
     <input type="number" name="txtn2" id="txtn2">
     <input type="button" value="Somar" onclick="somar()">
     <div id="res">Resultado</div>
 
-    <input type="number" name="txtn3" id="txtn3">
+    <input type="number" name="txtn3" id="txtn3"> -
     <input type="number" name="txtn4" id="txtn4">
     <input type="button" value="Subtrair" onclick="subtrair()">
     <div id="res2">Resultado</div>
@@ -43,7 +43,7 @@
             var n1so = Number(tn1.value)
             var n2so = Number(tn2.value)
             var somar = n1so + n2so
-            res.innerHTML = `A soma entre ${n1so} E ${n2so} É igual a ${somar}`
+            res.innerHTML = `${n1so} + ${n2so} = ${somar}`
         }
 
         function subtrair() {
@@ -52,9 +52,9 @@
             var res2 = window.document.getElementById('res2')
 
             var n3su = Number(tn3.value)
-            var n3su = Number(tn4.value)
+            var n4su = Number(tn4.value)
             var sub = n3su - n4su
-            res2.innerHTML = `A subtração entre ${n3su} E ${n4su} É igual a ${sub}`
+            res2.innerHTML = `${n3su} - ${n4su} = ${sub}`
         }
     </script>
 </body>
