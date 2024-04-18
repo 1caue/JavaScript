@@ -470,3 +470,34 @@ Ex:
         a.addEventListener('mouseout', sair)
     </script>
 
+-------
+A11 | Condições pt.1
+Condições no JavaScript são instruções que permitem que um programa execute 
+diferentes ações com base em determinadas condições. Essas condições são avaliadas
+como verdadeiras ou falsas e são controladas por estruturas de controle de fluxo,
+como if, else if, else e switch.
+
+if no js:
+if (condição) {
+   true
+{ else {
+   false
+}
+
+// Tipos de condição
+
+condição simples |
+if (condição) {  | if (condição) {
+   true          |     true
+}                |} else { 
+                 |     false
+                 |}
+
+Exs em Scripts:
+var vel = 12
+console.log(`A velocidade do seu carro é ${vel}Km/h`)
+if (vel > 60) {
+    console.log('Você Ultrapassou a velocidade Permitida, MULTADO!')
+}
+console.log('Dirija sempre usando o cinto de segurança!')
+
