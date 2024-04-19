@@ -501,3 +501,49 @@ if (vel > 60) {
 }
 console.log('Dirija sempre usando o cinto de segurança!')
 
+
+Ex's em um site:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country</title>
+</head>
+
+<body>
+  <h1>Sistema de Identificação</h1>
+  <h2>Verificar nacionalidade</h2>
+  <h3>Digite o seu pais de Origem:<input type="text" name="box" id="box">
+    <input type="submit" value="Verificar" onclick="verificar()">
+  </h3>
+  <div id="res">
+  </div>
+
+  <script>
+    function verificar() {
+      var pais = 'Brasil'
+      var bx = window.document.getElementById('box').value;
+      var dv = window.document.querySelector('div#res');
+      if (bx == 'Brasil' || 'brasil') {
+        dv.innerHTML = 'Você é Brasileiro!';
+
+      } else if (bx == 'Argentina' || 'argentina') {
+        dv.innerHTML = 'Você é Argentino!';
+
+      } else if (bx == 'Espanha' || 'espanha') {
+        dv.innerHTML = 'Você é Espanhol!';
+
+      } else if (bx == 'Portugal' || 'portugal') {
+        dv.innerHTML = 'Você é Português!';
+      } else {
+        dv.innerHTML = 'Você é estrangeiro!';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
