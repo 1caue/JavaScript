@@ -19,18 +19,15 @@
   <script>
     function verificar() {
       var pais = 'Brasil'
-      var bx = window.document.getElementById('box').value;
+      var bx = window.document.getElementById('box').value.toLowerCase();
       var dv = window.document.querySelector('div#res');
-      if (bx == 'Brasil' || 'brasil') {
+      if (bx == 'brasil') {
         dv.innerHTML = 'Você é Brasileiro!';
-
-      } else if (bx == 'Argentina' || 'argentina') {
+      } else if (bx == 'argentina') {
         dv.innerHTML = 'Você é Argentino!';
-
-      } else if (bx == 'Espanha' || 'espanha') {
+      } else if (bx == 'espanha') {
         dv.innerHTML = 'Você é Espanhol!';
-
-      } else if (bx == 'Portugal' || 'portugal') {
+      } else if (bx == 'portugal') {
         dv.innerHTML = 'Você é Português!';
       } else {
         dv.innerHTML = 'Você é estrangeiro!';
