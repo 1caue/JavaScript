@@ -547,3 +547,47 @@ Ex's em um site:
 </body>
 
 </html>
+
+=========
+A12 | Condições (Parte 2)
+Condições Aninhadas;
+São condições dentro de condições(if, else if) Basicamente 
+ex:
+if (cond) {
+   bloco1
+} else {
+    if (cond2) {
+       bloco2
+    } else {  
+       bloco 3
+    } 
+}
+
+Condição Múltipla
+            Valor
+              | 
+        ---------------    
+        |   |    |    |   
+    Valor Valor Valor Valor
+        |   |    |    | 
+        ---------------
+              |
+            Valor  
+
+Ex em código:
+switch(expressão) { // Irá realizar o teste da expressão
+    case valor 1:
+        bloco1
+	break    
+    case valor 2:
+        bloco2
+        break
+    case valor 3:
+        bloco3
+        break
+    default:  // Opcional
+        bloco4
+	break
+}  
+
+Para cada caso é nessesário um comando 'break', no 'default' ele é opcional
