@@ -633,4 +633,5 @@ switch(diasem){
         break
     }   
 
-Ao invés de criar uma estrutura de if e else, essa estrutura é mais indicada 
+Ao invés de criar uma estrutura de if e else, essa estrutura é mais indicada
+para crição de "se" e "senão" 
