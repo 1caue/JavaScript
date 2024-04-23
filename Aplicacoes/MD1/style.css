@@ -3,7 +3,7 @@ body {
     font: normal 15pt Arial;
 }
 
-header{
+header {
     color: white;
     text-align: center;
 }
@@ -15,7 +15,11 @@ section {
     width: 800px;
     margin: auto;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.514);
+}
 
+div {
+    text-align: center;
+    padding: 10px;
 }
 
 footer {
