@@ -635,3 +635,8 @@ switch(diasem){
 
 Ao invés de criar uma estrutura de if e else, essa estrutura é mais indicada
 para crição de "se" e "senão" 
+
+Módulo E - Repetições em JavaScript
+  - Repetições com teste no inicio 
+  - Repetições com teste no final 
+  - Repetição com controle 
