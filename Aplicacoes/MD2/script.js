@@ -46,7 +46,6 @@ function verificar() {
                 // Idoso
                 img.setAttribute('src', 'idoso-fem2.png')
                 genero = 'uma Idosa'
-                
             }
         }
         res.style.textAlign = 'center'
