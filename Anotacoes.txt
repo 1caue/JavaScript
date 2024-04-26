@@ -640,3 +640,74 @@ Módulo E - Repetições em JavaScript
   - Repetições com teste no inicio 
   - Repetições com teste no final 
   - Repetição com controle 
+
+A13 - Repetições pt.1
+Em um exemplo direto podemos dar um exemplo de repetições em um algorito de "comer pizza"
+ex:
+function comerPizza() {
+   comerFatia()
+   comerFatia()	 
+   comerFatia()
+   comerFatia()
+   comerFatia()
+   comerFatia()
+   comerFatia()
+   comerFatia()	
+}
+
+Repetições testam expressões
+Em uma estrutura dessas se uma condição for verdadeira ele vai executar um bloco só que ele não vai
+prosseguir pro bloco que está abaixo, ele irá retornar para a condição e irá criar um laço, um looping
+,uma repetição, até essa repetição for verdadeira, a partir do momento que esse losangulo for não
+verdade, o laço é quebrado e o fluxo do programa seguirá normalmente.
+
+Enquanto = While
+Em js:
+while (condição)
+
+Script "Comer Fatia" com o while:
+
+function comerPizza () {
+    while (temFatia()) {
+	comerFatia() 
+    }
+}
+
+Outra maneira de fazer o bloco:
+do {
+  Condição
+} while (condição)
+
+-------------------
+Todos códigos abaixo executão da mesma maneira, porém a melhor maneira é o primeiro
+
+1)----
+var c = 1
+do {
+    console.log(`Passo ${c}`)
+    c++
+} while (c <= 6) 
+  
+2)----
+var c = 1
+while (c <= 6) {
+    console.log('Passo ${c}')
+    c++
+}
+
+3)---- Pior solução
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+
+while = o teste lógico é feito no inicio
+do while = o teste lógico é feito no final
+
+A14 - Repetições pt.2
+Estrutura de repetição com variável de controle
+esse script assim como as outras estruturas de repetições irá retornar e criar um laço repetidas vezes
+, só que dessa vez no momento do loop ele tambem fará o incremento e sendo verdadeiro mais uma vez o 
+bloco é executado, essa estrutura é mais conhecida como estrutura de repetição com variável de controle
