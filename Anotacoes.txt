@@ -711,3 +711,23 @@ Estrutura de repetição com variável de controle
 esse script assim como as outras estruturas de repetições irá retornar e criar um laço repetidas vezes
 , só que dessa vez no momento do loop ele tambem fará o incremento e sendo verdadeiro mais uma vez o 
 bloco é executado, essa estrutura é mais conhecida como estrutura de repetição com variável de controle
+
+Ex do script:
+ for(Inicio;teste;incr) {
+
+}
+
+A seguir estará um exemplo de um laço while e um laço for, os dois retornarão o mesmo resultado:
+
+While:
+var c=1
+while (c<=10){
+  console.log('Olá') 
+  c++
+}     
+  
+For:
+for(var c=1; c<=10; c++){
+  console.log('Olá') 
+}
+
