@@ -731,3 +731,6 @@ for(var c=1; c<=10; c++){
   console.log('Olá') 
 }
 
+====
+Terminal para debug: Run Current File
+
