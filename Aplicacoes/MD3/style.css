@@ -1,6 +1,7 @@
 body {
     background: rgb(15, 86, 255);
     font: normal 15pt Arial;
+    text-align: left;
 }
 
 header {
