@@ -13,19 +13,15 @@
         <h1>Vamos Contar</h1>
     </header>
     <section>
-        <h3>
-            Inicío: 
-            <input type="number" name="ini" id="ini">
-        
-        <h3>
-            Fim:
-            <input type="number" name="fim" id="fim">
-        
-        <h3>
-            Passo:
-            <input type="number" name="pas" id="pas">
-        <h3><input type="button" value="Contar" id="btn">
-        <h2>Preparando a contagem...</h2>        
+        <div id="dados">
+            <p><strong>Inicio:</strong> <input type="number" name="ini" id="ini"></p>
+            <p><strong>Fim:</strong> <input type="number" name="fim" id="fim"></p>
+            <p><strong>Passo:</strong> <input type="number" name="pas" id="pas"></p>
+            <p><input type="button" value="contar" onclick="button()"></p>
+        </div>
+        <div id="res">
+            Preparando a contagem...
+        </div>  
     </section>
     <footer>
         <p><strong>&copy; Cauê</strong></p>
