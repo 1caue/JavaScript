@@ -733,3 +733,14 @@ for(var c=1; c<=10; c++){
 
 ====
 Terminal para debug: Run Current File
+
+====
+Contagem regressiva crescente:
+for(var c = i; c <= f; c += p) {
+                res.innerHTML += `<strong>${c}</strong> &#128073; `
+            } 
+
+Regressiva:
+for (var c = i; c >= f; c -= p){
+                res.innerHTML += `<strong>${c}</strong> &#128073;` 
+            }    
