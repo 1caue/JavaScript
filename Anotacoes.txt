@@ -743,4 +743,30 @@ for(var c = i; c <= f; c += p) {
 Regressiva:
 for (var c = i; c >= f; c -= p){
                 res.innerHTML += `<strong>${c}</strong> &#128073;` 
-            }    
+            }
+
+Módulo F 
+- Variáveis Compostas 
+- Uso de funções e eventos 
+- Passagem de Parâmetros
+- Exercicios Propostos 
+- Próximos Passos
+
+-----------------
+
+A15 | Variáveis compostas 
+
+- Variáveis simples só conseguem armazenar um valor por uma vez
+
+- Variáveis compostas devem ser capazes de armazenar vários valores 
+em uma mesma estrutura. 
+
+Uma variável composta contém vários elementos, como uma lista no python
+Uma variável composta é uma variável que tem vários elementos cada elemento
+é composto por seu valor e por uma chave de identificação 
+
+           0  1  2  
+let num = [5, 8, 4]
+
+
+ 
