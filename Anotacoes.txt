@@ -768,5 +768,27 @@ Uma variável composta é uma variável que tem vários elementos cada elemento
            0  1  2  
 let num = [5, 8, 4]
 
+num.indexOf(valor) = Vai procurar no vetor onde está o valor digitado
 
- 
+-----------------
+
+A16 | Funções
+
+Funções são ações executadas assim que são chamadas ou em decorrência de algum evento.
+Ex:
+			 *Parâmetro*
+onclick ---> function ação(param) {
+        return res             
+	}
+ação(5) *Chamada*
+
+Ex Par ou Impar:
+function parimp(n) {
+   if (n%2==0) {
+      return 'par'
+   } else {
+      return 'impar'
+   }
+}
+
+let res = parimp(11)
