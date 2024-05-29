@@ -6,3 +6,11 @@ console.log(num)*/
 for(let pos=0; pos<num.length; pos++) {
     console.log(`A posição ${pos+1} tem o valor ${num[pos]}`)
 }
+
+console.log('')
+console.log('No exemplo 2')
+for(let pos in num) {
+    console.log(`A posição ${pos+1} tem o valor ${num[pos]}`)
+}
+
+console.log(num.indexOf(3))
