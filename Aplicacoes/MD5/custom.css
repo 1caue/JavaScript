@@ -1,6 +1,7 @@
 body {
     background: rgb(2, 192, 250);
     font: normal 15pt Arial;
+    margin-right: -30;
 }
 
 header {
@@ -12,11 +13,29 @@ section {
     background: white;
     border-radius: 10px;
     padding: 15px;
-    width: 800px;
+    padding-right: 60px;
+    width: 500px;
     margin: auto;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.514);
 }
-
+input#btend[type="button" i] {
+    appearance: auto;
+    user-select: none;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    white-space: pre;
+    padding-block: 1px;
+    padding-inline: 6px;
+    margin-left: 155px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
 div {
     text-align: center;
     padding: 10px;
@@ -26,4 +45,11 @@ footer {
     color: rgb(73, 73, 73);
     text-align: center;
     font-style: italic;
+}
+
+div#d2 {
+    text-align: center;
+    padding: 0px;
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
