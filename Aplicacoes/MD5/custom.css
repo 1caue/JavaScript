@@ -29,7 +29,9 @@ input#btend[type="button" i] {
     color: buttontext;
     white-space: pre;
     padding-block: 1px;
+    padding-top: 10px;
     padding-inline: 6px;
+    margin-top: 10px;
     margin-left: 155px;
     border-width: 2px;
     border-style: outset;
@@ -46,7 +48,15 @@ footer {
     text-align: center;
     font-style: italic;
 }
+div#res {
+    text-align: left;
+}
 
+select {
+    width: 180px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
 div#d2 {
     text-align: center;
     padding: 0px;
