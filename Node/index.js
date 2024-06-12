@@ -3,7 +3,6 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 
-
 router.get('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.html'));
     })
@@ -11,7 +10,11 @@ router.get('/', function(req,res){
 router.get('/sobre', function(req,res){
     res.sendFile(path.join(__dirname+'/sobre.html'));
     })
-    
+
+router.get('/mais', function(req,res){
+    res.sendFile(path.join(__dirname+'/mais.html'));
+    })
+
 app.use('/',router);
 app.listen(process.env.port || 3000);
-console.log('Servidor Rodando!');
+console.log('Servidor Rodando!, Para parar basta Dar um "Ctrl + C"');
