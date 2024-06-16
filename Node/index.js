@@ -1,8 +1,13 @@
 const express = require('express');
-const app = express();
-const path = require('path');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+
 const router = express.Router();
-const bodyParser = require('body-parser')
+
+const port = 1000;
+const path = require('path');
+const { setEngine } = require('crypto');
+const app = express();
 
 var login = 'admin'
 var password = '123456'
@@ -18,6 +23,10 @@ router.get('/sobre', function(req,res){
 router.get('/login', function(req,res){
     res.sendFile(path.join(__dirname+'/login.html'));
     })
+
+app.use(session({secret:'adasda'}));
+app.use(bodyParser.urlencoded({extended:true}));
+
 
 app.post('/', (req, res)=> {
     
@@ -36,7 +45,7 @@ app.get('/', (req, res) =>{
     }
 })
 
-app.listen(port, ()=>{
+app.listen(port,()=>{
     console.log('Função rodando!');
 })
 
