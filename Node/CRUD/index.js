@@ -25,7 +25,7 @@ server.post('/cursos', (req, res) => {
 });
 
 // Update
-server.put('/cursos/index', (req, res) => {
+server.put('/cursos/:index', (req, res) => {
     const { index } = req.params;
     const { name } = req.body;
 
@@ -43,4 +43,4 @@ server.delete('/cursos/index', (req, res) => {
 });
 
 
-server.listen(300);
+server.listen(3000);
