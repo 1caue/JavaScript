@@ -1,5 +1,4 @@
-const entrada = require('prompt-sync')({sigint: true});
-let x;
-x = entrada('Digite o x: ');
-
-console.log(`X = ${x}`)
+var n1 =
+var n2 =
+var n3 =
+var n4 =
