@@ -9,7 +9,7 @@ console.log(`${nome} a Soma dos dois valores é:`);
 console.log(`${n1} + ${n1} = ${s}`);
 
 if(s % 2 == 0){
-    console.log('O valor inserido é par')
+    console.log('O valor inserido é Par')
 } else {
-    console.log('O valor inserido é')
+    console.log('O valor inserido é Impar')
 }
