@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "colorjs.io": "^0.5.2",
+    "colors": "^1.4.0",
     "readline-sync": "^1.4.10"
   }
 }
