@@ -6,7 +6,7 @@ console.log('---------------------------------------')
 if (idade < 16) {
     console.log(`${name} você tem ${idade} anos, você ainda NÃO pode votar`)
 } else if (idade == 16 || idade > 65) {
-    console.log(`${name} você tem ${idade} anos, você PODE votar porém NÃO é OBRIGADO`)
+    console.warn(`${name} você tem ${idade} anos, você PODE votar porém NÃO é OBRIGADO`)
 } else {
     console.log(`${name} você tem ${idade} anos, você é OBRIGADO a votar`)
 }
