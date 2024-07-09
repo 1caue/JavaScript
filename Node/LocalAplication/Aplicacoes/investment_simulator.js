@@ -6,10 +6,11 @@ var bdc = 0
 var itu = 0
 var value = 0
 
-console.log('--------INVESTIMENTOS BANCÁRIOS--------'.green)
-console.log('[1] BBAS3 (Banco do Brasil) R$26,29 BRL\n[2] BBDC4 (Bradesco) R$12,46 BRL\n[3] ITUB4 (Itaú Unibanco) R$28,36 BRL')
-
 while (true) {
+
+    console.log('--------INVESTIMENTOS BANCÁRIOS--------'.green)
+    console.log('[1] BBAS3 (Banco do Brasil) R$26,29 BRL\n[2] BBDC4 (Bradesco) R$12,46 BRL\n[3] ITUB4 (Itaú Unibanco) R$28,36 BRL')
+    
     var quest = read.questionInt('Em qual acao deseja investir?, Informe o Digito da acao: ')
     if (quest === 1) {
         console.log('OK você investiu no Banco do brasil!\n')
