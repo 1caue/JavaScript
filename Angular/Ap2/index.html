@@ -45,8 +45,16 @@
                 {nome: "GVT", codigo: 37, categoria: "Fixo"},
                 {nome: "Embratel", codigo: 51, categoria: "Fixo"}
             ];       
-            $scope.apagaContatos = function () {
-                console.log($scope.contatos);
+            $scope.apagarContatos = function (contatos) {
+                $scope.contatos = contatos.filter(function (contato) {
+                    return !contato.selecionado;
+                });
+            };
+            $scope.isContatoSelecionado = function (contatos) {
+                return contatos.some(function (contato) {
+                    return contato.selecionado;
+                });
+                console.log(isContatoSelecionado);
             };
         });
 
@@ -55,7 +63,6 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h4>{{app}}</h4> 
-        {{contatos}}
         <table class="table">
             <tr>
                 <th>Nome</th>
@@ -77,7 +84,7 @@
             <option value="">Selecione uma Operadora</option>
         </select>
         <button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
-        <button class="btn btn-danger btn-block" ng-click="apagarContatos()">Apagar Contato</button>
+        <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contato</button>
     </div>
 </body>
 </html>
