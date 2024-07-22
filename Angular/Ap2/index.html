@@ -29,14 +29,15 @@
         }
     </style>
     <script src="angular.js"></script>
+    <script src="angular-messages.js"></script>
     <script>
-        angular.module("listaTelefonica", []);
+        angular.module("listaTelefonica", ["ngMessages"]);
         angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
             $scope.app = "Lista Telefonica";
             $scope.contatos = [
-                { nome: "Pedro", telefone: "9999999", cor: "blue" },
+                { nome: "João", telefone: "9999999", cor: "blue" },
                 { nome: "Ana", telefone: "4444444", cor: "red" },
-                { nome: "Pedro", telefone: "5555555", cor: "black" }
+                { nome: "Felipe", telefone: "5555555", cor: "black" }
             ];
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
@@ -95,20 +96,27 @@
             <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome"
                 ng-required="true" ng-minlength="10" />
             <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone"
-                ng-required="true" />
+                ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
             <select class="form-control" ng-model="contato.operadora"
                 ng-options="operadora.nome for operadora in operadoras">
                 <option value="">Selecione uma Operadora</option>
             </select>
         </form>
-        <div ng-show="contatoForm.nome.$error.required && contatoForm.nome.$dirty" class="alert alert-danger">
-            Por favor, preencha o Campo Nome!
-        </div> 
-        <div ng-show="contatoForm.nome.$error.minlength && contatoForm.nome.$dirty" class="alert alert-danger">
-            O campo nome deve ter no minimo 10 caracteres.
+
+        <div ng-messages="contatoForm.nome.$error" class="alert alert-danger">
+            <div ng-message="required">
+                Por favor, preencha o Campo Nome!
+            </div> 
+            <div ng-message="minlength">
+                O campo nome deve ter no minimo 10 caracteres.
+            </div>
         </div>
-        <div ng-show="contatoForm.telefone.$invalid && contatoForm.telefone.$dirty" class="alert alert-danger">
+        
+        <div ng-show="contatoForm.telefone.$error.required" class="alert alert-danger">
             Por favor, preencha o Campo Telefone!
+        </div>
+        <div ng-show="contatoForm.telefone.$error.pattern" class="alert alert-danger">
+            O Campo telefone deve ter o formato DDDDD-DDDD
         </div>
         <button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)"
             ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
