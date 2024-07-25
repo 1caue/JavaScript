@@ -33,12 +33,12 @@
     <script src="angular-locale_pt-br.js"></script>
     <script>
         angular.module("listaTelefonica", ["ngMessages"]);
-        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
+        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter) {
             $scope.app = "Lista Telefonica";
             $scope.contatos = [
-                { nome: "João", telefone: "9999999", data: new Date(), operadora: { nome: "Oi", codigo: 14 }, cor: "blue" },
-                { nome: "Ana", telefone: "4444444", data: new Date(), operadora: { nome: "Vivo", codigo: 55 }, cor: "red" },
-                { nome: "Felipe", telefone: "5555555", data: new Date(), operadora: { nome: "Tim", codigo: 21 }, cor: "black" }
+                { nome: uppercaseFilter("João"), telefone: "98765-4321", data: new Date(), operadora: { nome: "Oi", codigo: 14 }, cor: "blue" },
+                { nome: "Ana", telefone: "12345-6789", data: new Date(), operadora: { nome: "Vivo", codigo: 55 }, cor: "red" },
+                { nome: "Felipe", telefone: "12024-2023", data: new Date(), operadora: { nome: "Tim", codigo: 21 }, cor: "black" }
             ];
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
@@ -85,9 +85,9 @@
                 <th>Data</a></th>
             </tr>
             <tr ng-class="{'selecionado negrito': contato.selecionado}"
-                ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+                ng-repeat="contato in contatos | filter:criterioDeBusca | limitTo:3 | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
                 <td><input type="checkbox" ng-model="contato.selecionado" /></td>
-                <td>{{contato.nome | uppercase}}</td>
+                <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora.nome | uppercase}}</td>
                 <td>{{contato.data | date:'MMM EEEE dd/MM/yyyy HH:mm'}}</td>
@@ -100,7 +100,7 @@
 
         <form name="contatoForm">
             <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome"
-                ng-required="true" ng-minlength="10" />
+                ng-required="true" ng-minlength="4" />
             <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone"
                 ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
             <select class="form-control" ng-model="contato.operadora"
@@ -114,7 +114,7 @@
                 Por favor, preencha o Campo Nome!
             </div>
             <div ng-message="minlength">
-                O campo nome deve ter no minimo 10 caracteres.
+                O campo nome deve ter no minimo 4 caracteres.
             </div>
         </div>
 
