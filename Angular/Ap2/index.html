@@ -33,13 +33,9 @@
     <script src="angular-locale_pt-br.js"></script>
     <script>
         angular.module("listaTelefonica", ["ngMessages"]);
-        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter) {
+        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http) {
             $scope.app = "Lista Telefonica";
-            $scope.contatos = [
-                { nome: uppercaseFilter("João"), telefone: "98765-4321", data: new Date(), operadora: { nome: "Oi", codigo: 14 }, cor: "blue" },
-                { nome: "Ana", telefone: "12345-6789", data: new Date(), operadora: { nome: "Vivo", codigo: 55 }, cor: "red" },
-                { nome: "Felipe", telefone: "12024-2023", data: new Date(), operadora: { nome: "Tim", codigo: 21 }, cor: "black" }
-            ];
+            
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
                 delete $scope.contato;
@@ -53,6 +49,11 @@
                 { nome: "GVT", codigo: 37, categoria: "Fixo", preco: 2.5 },
                 { nome: "Embratel", codigo: 51, categoria: "Fixo", preco: 1.5 }
             ];
+
+            var carregarContatos = function (){
+                $http.get()
+            };
+
             $scope.apagarContatos = function (contatos) {
                 $scope.contatos = contatos.filter(function (contato) {
                     return !contato.selecionado;
@@ -128,7 +129,6 @@
             ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
         <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)"
             ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
-        {{100.2 | number:1}}
     </div>
     <div ng-include="'footer.html'"></div>
 </body>
