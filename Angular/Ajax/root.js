@@ -1,19 +1,48 @@
 const express = require('express');
-const fs = require('fs');
+const cors = require('cors');
 const app = express();
-const port = 500;
 
-app.get('/data', (req, res) => {
-    fs.readFile('contatos.json', 'utf8', (err, data) => {
-        if (err) {
-            res.status(500).send('Error reading file');
-            return;
+const contatos = [
+        {
+            "nome": "Bruno",
+            "telefone": "9999-3333",
+            "data": "2015-04-12T12:53:46.2042",
+            "operadora": {
+                "nome": "Oi",
+                "codigo": 14,
+                "categoria": "Celular"
+            }
+        },
+        {
+            "nome": "Sandra",
+            "telefone": "9999-4444",
+            "data": "2015-04-12T12:53:46.2042",
+            "operadora": {
+                "nome": "Vivo",
+                "codigo": 15,
+                "categoria": "Celular"
+            }
+        },
+        {
+            "nome": "Mariana",
+            "telefone": "5555-2222",
+            "data": "2015-04-12T12:53:46.2042",
+            "operadora": {
+                "nome": "Tim",
+                "codigo": 41,
+                "categoria": "Celular"
+            }
         }
-        res.setHeader('Content-type', 'aplication/json');
-        res.send(data);
-    });
+];
+
+app.use(cors());
+
+app.get('/contatos', (req, res) => {
+    res.json(contatos);
 });
 
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    console.log('LINK: http://127.0.0.1:5500/Ajax/ajax.html');
 });
