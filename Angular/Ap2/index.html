@@ -41,6 +41,8 @@
                 delete $scope.contato;
                 $scope.contatoForm.$setPristine();
             };
+
+            $scope.contatos = [];
             $scope.operadoras = [
                 { nome: "Oi", codigo: 14, categoria: "Celular", preco: 2 },
                 { nome: "Tim", codigo: 21, categoria: "Celular", preco: 1 },
@@ -51,7 +53,9 @@
             ];
 
             var carregarContatos = function (){
-                $http.get()
+                $http.get('http://localhost:3000/contatos').success(function (data, status) {
+                    console.log(data);
+                });
             };
 
             $scope.apagarContatos = function (contatos) {
@@ -68,8 +72,8 @@
                 $scope.criterioDeOrdenacao = campo;
                 $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
             };
+        carregarContatos();
         });
-
     </script>
 </head>
 
