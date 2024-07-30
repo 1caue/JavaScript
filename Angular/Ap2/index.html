@@ -37,24 +37,31 @@
             $scope.app = "Lista Telefonica";
             
             $scope.adicionarContato = function (contato) {
-                $scope.contatos.push(angular.copy(contato));
-                delete $scope.contato;
-                $scope.contatoForm.$setPristine();
+                $http.post("http://localhost:3000/contatos", contato).then(function (response) {
+                    $scope.contatos.push(angular.copy(contato));
+                    delete $scope.contato;
+                    $scope.contatoForm.$setPristine();
+                }).catch(function (error) {
+                    console.error("Erro ao adicionar contato: ", error);
+                });
             };
 
             $scope.contatos = [];
-            $scope.operadoras = [
-                { nome: "Oi", codigo: 14, categoria: "Celular", preco: 2 },
-                { nome: "Tim", codigo: 21, categoria: "Celular", preco: 1 },
-                { nome: "Claro", codigo: 42, categoria: "Celular", preco: 3 },
-                { nome: "Vivo", codigo: 55, categoria: "Celular", preco: 1 },
-                { nome: "GVT", codigo: 37, categoria: "Fixo", preco: 2.5 },
-                { nome: "Embratel", codigo: 51, categoria: "Fixo", preco: 1.5 }
-            ];
+            $scope.operadoras = [];
 
-            var carregarContatos = function (){
-                $http.get('http://localhost:3000/contatos').success(function (data, status) {
-                    console.log(data);
+            var carregarContatos = function () {
+                $http.get('http://localhost:3000/contatos').then(function (response) {
+                    $scope.contatos = response.data;
+                    console.log(response.data);
+                }).catch(function (error) {
+                    console.error("Erro ao carregar contatos: ", error)
+                });
+            };
+
+            var carregarOperadoras = function () {
+                $http.get("http://localhost:3000/operadoras").then(function (response) {
+                    $scope.operadoras = response.data;
+                    console.log(response.data);
                 });
             };
 
@@ -73,6 +80,7 @@
                 $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
             };
         carregarContatos();
+        carregarOperadoras();
         });
     </script>
 </head>
