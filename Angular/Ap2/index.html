@@ -35,39 +35,35 @@
         angular.module("listaTelefonica", ["ngMessages"]);
         angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http) {
             $scope.app = "Lista Telefonica";
-            
-            $scope.adicionarContato = function (contato) {
-                $http.post("http://localhost:3000/contatos", contato).then(function (response) {
-                    $scope.contatos.push(angular.copy(contato));
-                    delete $scope.contato;
-                    $scope.contatoForm.$setPristine();
-                }).catch(function (error) {
-                    console.error("Erro ao adicionar contato: ", error);
-                });
-            };
-
             $scope.contatos = [];
             $scope.operadoras = [];
+            
+            $scope.adicionarContato = function (contato) {
+                console.log("Adicionando contato:", contato);
+                $http.post("http://localhost:3000/contatos", contato).then(function (response) {
+                    console.log("Resposta do servidor:", response.data);
+                    $scope.contatos.push(response.data);
+                    delete $scope.contato;
+                    $scope.contatoForm.$setPristine();
+                });
+            };
 
             var carregarContatos = function () {
                 $http.get('http://localhost:3000/contatos').then(function (response) {
                     $scope.contatos = response.data;
-                    console.log(response.data);
-                }).catch(function (error) {
-                    console.error("Erro ao carregar contatos: ", error)
-                });
+                    console.log("Contatos carregados:", response.data);
+                })
             };
 
             var carregarOperadoras = function () {
-                $http.get("http://localhost:3000/operadoras").then(function (response) {
+                $http.get("http://localhost:3000/operadoras").then(function (response, data) {
                     $scope.operadoras = response.data;
-                    console.log(response.data);
                 });
             };
 
             $scope.apagarContatos = function (contatos) {
                 $scope.contatos = contatos.filter(function (contato) {
-                    return !contato.selecionado;
+                   if (!contato.selecionado) return contato;
                 });
             };
             $scope.isContatoSelecionado = function (contatos) {
@@ -98,7 +94,7 @@
                 <th>Data</a></th>
             </tr>
             <tr ng-class="{'selecionado negrito': contato.selecionado}"
-                ng-repeat="contato in contatos | filter:criterioDeBusca | limitTo:3 | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+                ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
                 <td><input type="checkbox" ng-model="contato.selecionado" /></td>
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
