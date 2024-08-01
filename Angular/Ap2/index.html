@@ -42,9 +42,9 @@
                 console.log("Adicionando contato:", contato);
                 $http.post("http://localhost:3000/contatos", contato).then(function (response) {
                     console.log("Resposta do servidor:", response.data);
-                    $scope.contatos.push(response.data);
                     delete $scope.contato;
                     $scope.contatoForm.$setPristine();
+                    carregarContatos();
                 });
             };
 
@@ -58,6 +58,7 @@
             var carregarOperadoras = function () {
                 $http.get("http://localhost:3000/operadoras").then(function (response, data) {
                     $scope.operadoras = response.data;
+                    console.log("Operadoras carregadas: ", response.data);
                 });
             };
 
@@ -142,3 +143,4 @@
 </body>
 
 </html>
+ 
