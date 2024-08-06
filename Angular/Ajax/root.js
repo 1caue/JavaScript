@@ -98,6 +98,7 @@ app.post('/contatos', (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => {
+    console.log('-----------------------------------')
     console.log(`Server is running on port ${PORT}`);
     console.log('LINK DO SERVIDOR: http://127.0.0.1:5500/Ajax/ajax.html');
     console.log('LINK DO SERVIDOR DOS CONTATOS: http://localhost:3000/contatos');
