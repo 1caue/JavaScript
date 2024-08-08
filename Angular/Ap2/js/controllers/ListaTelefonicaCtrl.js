@@ -1,11 +1,11 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, $http) {
     $scope.app = "Lista Telefonica";
     $scope.contatos = [];
     $scope.operadoras = [];
     
     $scope.adicionarContato = function (contato) {
-        console.log("Adicionando contato:", contato);
-        $http.post("http://localhost:3000/contatos", contato).then(function (response) {
+        contato.data = new Date();
+        contatosAPI.saveContato(contato).then(function (response) {
             console.log("Resposta do servidor:", response.data);
             delete $scope.contato;
             $scope.contatoForm.$setPristine();
@@ -14,7 +14,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
     };
 
     var carregarContatos = function () {
-        $http.get('http://localhost:3000/contatos').then(function (response) {
+        contatosAPI.getContatos().then(function (response) {
             $scope.contatos = response.data;
             console.log("Contatos carregados:", response.data);
         })
