@@ -4,6 +4,11 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
     $scope.operadoras = [];
 
     $scope.adicionarContato = function (contato) {
+        var serial = "";
+        while(serial.length < 20) {
+            serial += String.fromCharCode(Math.floor(Math.random() * 64) + 32);
+        }
+        contato.serial = serial;
         contato.data = new Date();
         contatosAPI.saveContato(contato).then(function (response) {
             console.log("Resposta do servidor:", response.data);
