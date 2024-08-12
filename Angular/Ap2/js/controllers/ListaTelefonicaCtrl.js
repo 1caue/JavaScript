@@ -1,14 +1,11 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, $http, operadorasAPI) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, $http, operadorasAPI, serialGenerator) {
+    console.log(serialGenerator.generate());
     $scope.app = "Lista Telefonica";
     $scope.contatos = [];
     $scope.operadoras = [];
 
     $scope.adicionarContato = function (contato) {
-        var serial = "";
-        while(serial.length < 20) {
-            serial += String.fromCharCode(Math.floor(Math.random() * 64) + 32);
-        }
-        contato.serial = serial;
+        contato.serial = serialGenerator.generate();
         contato.data = new Date();
         contatosAPI.saveContato(contato).then(function (response) {
             console.log("Resposta do servidor:", response.data);
