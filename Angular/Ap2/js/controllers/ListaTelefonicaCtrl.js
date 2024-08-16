@@ -16,10 +16,18 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
     };
 
     var carregarContatos = function () {
-        contatosAPI.getContatos().then(function (response) {
-            $scope.contatos = response.data;
-            console.log("Contatos carregados:", response.data);
-        })
+        contatosAPI.getContatos()
+            .then(function (response) {
+                response.data.forEach(function (item) {
+                    item.serial = serialGenerator.generate();
+                });
+                $scope.contatos = response.data;
+                console.log("Contatos carregados:", response.data);
+            })
+            .catch(function (data, status) {
+                $scope.error = "Não foi possivel carregar os dados!";
+                console.error("Erro ao carregar contatos:", error);
+            });
     };
 
     var carregarOperadoras = function () {
