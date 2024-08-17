@@ -6,7 +6,9 @@
 
     <title>Lista Telefonica</title>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css"  href="css/ui.css">
+
     <script src="angular.js"></script>
     <script src="/Ap2/angular-messages.js"></script>
     <script src="/Ap2/angular-locale_pt-br.js"></script>
@@ -19,19 +21,18 @@
     <script src="js/config/serialGeneratorConfig.js"></script>
     <script src="js/filters/nameFilter.js"></script>
     <script src="js/filters/elipesisFilter.js"></script>
+    <script src="js/directives/uiAlertDirective.js"></script>
+
 </head>
 
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3>{{app}}</h3>
-        <div class="ui-alert">
-            <div class="ui-alert-title">
-                Ops, ocorreu um ploblema!
-            </div>
-            <div class="ui-alert-message">
-                {{error}}
-            </div>
-        </div>
+        
+        <div ui-alert></div>
+
+        
+        
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?">
         <table ng-show="contatos.length > 0" class="table">
             <tr>
