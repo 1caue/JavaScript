@@ -29,7 +29,11 @@
     <div class="jumbotron">
         <h3>{{app}}</h3>
         
-        <div ui-alert></div>
+        {{$id}}
+        <ui-alert title="Ops, ocorreu um ploblema!">
+            {{$id}}
+            Não foi possível carregar os dados
+        </ui-alert>
 
         
         
