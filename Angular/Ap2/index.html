@@ -29,13 +29,12 @@
     <div class="jumbotron">
         <h3>{{app}}</h3>
         
-        {{$id}}
         <ui-alert title="Ops, ocorreu um ploblema!">
-            {{$id}}
-            Não foi possível carregar os dados
+            {{error}}
         </ui-alert>
-
-        
+        <ui-alert title="Serie sobre AngularJs">
+            Episódio 10 - Criando Diretivas - Parte 1
+        </ui-alert>
         
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?">
         <table ng-show="contatos.length > 0" class="table">
