@@ -22,9 +22,10 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
                     item.serial = serialGenerator.generate();
                 });
                 $scope.contatos = response.data;
+                $scope.error = null;
                 console.log("Contatos carregados:", response.data);
             })
-            .catch(function (data, status) {
+            .catch(function (error) {
                 $scope.error = "Não foi possivel carregar os dados!";
                 console.error("Erro ao carregar contatos:", error);
             });
