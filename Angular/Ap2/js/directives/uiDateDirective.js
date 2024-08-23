@@ -3,8 +3,8 @@ angular.module("listaTelefonica").directive("uiDate", function () {
         require: "ngModel",
         link: function (scope, element, attrs, ctrl) {
             element.bind("keyup", function () {
-                console.log(ctrl.$viewValue);
-
+               ctrl.$setViewValue(ctrl.$viewValue, "!");
+               ctrl.$render();
             });
         }
     };
