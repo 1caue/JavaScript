@@ -27,6 +27,7 @@ angular.module("listaTelefonica").directive("uiDate", function ($filter) {
             
             ctrl.$formatters.push(function (value) {
                 return $filter("date")(value, "dd/MM/yyyy");
+                
             });
         }
     };
