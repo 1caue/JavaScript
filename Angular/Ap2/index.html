@@ -30,21 +30,23 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">        
         
-        <ui-accordion title="Accordion 1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in coluptate velit esse
-            cillum dolore eu fugiat nulla priantur. excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-        </ui-accordion>
-            
-        <ui-accordion title="Accordion 2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in coluptate velit esse
-            cillum dolore eu fugiat nulla priantur. excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-        </ui-accordion>
+        <ui-accordions>
+            <ui-accordion title="Accordion 1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in coluptate velit esse
+                cillum dolore eu fugiat nulla priantur. excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum
+            </ui-accordion>
+                
+            <ui-accordion title="Accordion 2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in coluptate velit esse
+                cillum dolore eu fugiat nulla priantur. excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum
+            </ui-accordion>
+        </ui-accordions>
         
         <hr/>
 
@@ -84,7 +86,6 @@
             
             <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone"
                 ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
-            {{contato.data}}
             <input class="form-control" type="text" ng-model="contato.data" name="data" 
             placeholder="Data" ui-date/>
             
