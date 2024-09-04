@@ -1,7 +1,7 @@
 angular.module("ui", []);
 
-angular.module("ui").run(function () {
-    $templateCache.put("view/accordion.html", "<div>teste</div>"); 
+angular.module("ui").run(function ($templateCache) {
+    $templateCache.put("view/accordion.html", '<div class="ui-accordion-title" ng-click="open()">{{title}}</div><div class="ui-accordion-content" ng-show="isOpened" ng-transclude></div>'); 
 });
 
 angular.module("ui").directive("uiAccordions", function () {
