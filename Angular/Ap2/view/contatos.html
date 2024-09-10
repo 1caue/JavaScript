@@ -1,5 +1,4 @@
 <div class="jumbotron">
-    <hr />
 
     <ui-alert title="Ops, ocorreu um ploblema!" ng-if="error">
         {{error}}
@@ -21,7 +20,7 @@
             <td>{{contato.serial}}</td>
             <td>{{contato.nome | name | ellipsis:10}}</td>
             <td>{{contato.telefone}}</td>
-            <td>{{contato.operadora.nome | uppercase}}</td>
+            <td>{{contato.operadora.nome}}</td>
             <td>{{contato.data | date:'MMM EEEE dd/MM/yyyy HH:mm'}}</td>
             <td>
                 <div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.cor}"></div>
@@ -35,3 +34,4 @@
         ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
 </div>
 
+ 
