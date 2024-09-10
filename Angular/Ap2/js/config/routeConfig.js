@@ -1,10 +1,14 @@
 angular.module("listaTelefonica").config(function($routeProvider) {
-    $routeProvider.when("/contatos", {
+    $routeProvider
+    .when("/contatos", {
         templateUrl: "view/contatos.html",
         controller: "listaTelefonicaCtrl"
-    });
-    $routeProvider.when("/novoContato", {
+    })
+    .when("/novoContato", {
         templateUrl: "view/novoContato.html",
         controller: "listaTelefonicaCtrl"
+    })
+    .otherwise({
+        redirectTo: "view/contatos.html"
     });
 });
