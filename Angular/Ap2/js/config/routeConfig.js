@@ -6,9 +6,9 @@ angular.module("listaTelefonica").config(function($routeProvider) {
     })
     .when("/novoContato", {
         templateUrl: "view/novoContato.html",
-        controller: "listaTelefonicaCtrl"
+        controller: "novoContatoCtrl"
     })
     .otherwise({
-        redirectTo: "view/contatos.html"
+        redirectTo: "/contatos"
     });
 });
