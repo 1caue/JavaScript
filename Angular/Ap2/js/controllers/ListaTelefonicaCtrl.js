@@ -1,7 +1,7 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, $http, operadorasAPI, serialGenerator) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, $http, operadoras, operadorasAPI, serialGenerator) {
     $scope.app = "Lista Telefonica";
-    $scope.contatos = [];
-    $scope.operadoras = [];
+    $scope.contatos = contatos.data;
+    $scope.operadoras = operadoras.data;
     $scope.contato = {
         data: 1093921200000
     };
@@ -17,28 +17,11 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
         });
     };
 
-    var carregarContatos = function () {
-        contatosAPI.getContatos()
-            .then(function (response) {
-                response.data.forEach(function (item) {
+    var generateSerial = function (contatos) {
+            contatos.forEach(function (item) {
                     item.serial = serialGenerator.generate();
                 });
-                $scope.contatos = response.data;
-                $scope.error = null;
-                console.log("Contatos carregados:", response.data);
-            })
-            .catch(function (error) {
-                $scope.error = "Não foi possivel carregar os dados!";
-                console.error("Erro ao carregar contatos:", error);
-            });
-    };
-
-    var carregarOperadoras = function () {
-        operadorasAPI.getOperadoras().then(function (response, data) {
-            $scope.operadoras = response.data;
-            console.log("Operadoras carregadas: ", response.data);
-        });
-    };
+           };
 
     $scope.apagarContatos = function (contatos) {
         $scope.contatos = contatos.filter(function (contato) {
@@ -54,7 +37,5 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
         $scope.criterioDeOrdenacao = campo;
         $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
     };
-    carregarContatos();
-    carregarOperadoras();
-});
-
+    generateSerial($scope.contatos);
+})
