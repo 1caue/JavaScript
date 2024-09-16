@@ -10,7 +10,7 @@ angular.module("listaTelefonica").config(function($routeProvider) {
             operadoras: function (operadorasAPI) {
                 return operadorasAPI.getOperadoras();
             }           
-        } 
+        }        
    })
    
     .when("/novoContato", {
