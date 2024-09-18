@@ -1,10 +1,5 @@
 angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope, contatosAPI, operadoras, serialGenerator, $location) {
-    $scope.contatos = [];
-    $scope.operadoras = [];
-    $scope.contato = {
-        data: 1093921200000
-    };
-
+    console.log("a",operadoras.data);
     $scope.operadoras = operadoras.data;
 
     $scope.adicionarContato = function (contato) {
