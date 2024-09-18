@@ -11,8 +11,8 @@ angular.module("listaTelefonica").config(function($routeProvider) {
                 return operadorasAPI.getOperadoras();
             }           
         }        
-   })
-   
+   });
+   $routeProvider
     .when("/novoContato", {
         templateUrl: "view/novoContato.html",
         controller: "novoContatoCtrl",
@@ -21,7 +21,8 @@ angular.module("listaTelefonica").config(function($routeProvider) {
                 return operadorasAPI.getOperadoras();
             }
         }
-    })
+    });
+    $routeProvider
     .otherwise({
         redirectTo: "/contatos"
     });
