@@ -16,11 +16,6 @@ angular.module("listaTelefonica").config(function($routeProvider) {
     .when("/novoContato", {
         templateUrl: "view/novoContato.html",
         controller: "novoContatoCtrl",
-        resolve: {
-            operadoras: function (operadorasAPI) {
-                return operadorasAPI.getOperadoras();
-            }
-        }
     });
     $routeProvider
     .otherwise({

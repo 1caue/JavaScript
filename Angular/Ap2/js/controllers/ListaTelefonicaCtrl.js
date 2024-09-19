@@ -1,10 +1,10 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, operadoras, contatos, serialGenerator) {
-    
-    console.log("contatos carregados", contatos); //
-    console.log("operadoras carregadas", operadoras); //
-    
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator, contatosAPI) {
+
+    console.log("contatos carregados", contatos);
+    console.log("operadoras carregadas", operadoras);
+
     $scope.app = "Lista Telefonica";
-    $scope.contatos = contatos.data;
+    $scope.contatos = contatos.data; // contatos já resolvidos na rota
     $scope.operadoras = operadoras.data;
 
     var carregarContatos = function() {
@@ -12,12 +12,12 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
             $scope.contatos = response.data;
         });
     };
-    
+
     var generateSerial = function (contatos) {
         contatos.forEach(function (item) {
-                item.serial = serialGenerator.generate();
-            });
-       };
+            item.serial = serialGenerator.generate();
+        });
+    };
 
     $scope.adicionarContato = function (contato) {
         contato.serial = serialGenerator.generate();
@@ -26,7 +26,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
             console.log("Resposta do servidor:", response.data);
             delete $scope.contato;
             $scope.contatoForm.$setPristine();
-            carregarContatos();
+            carregarContatos();  // Recarrega os contatos após adicionar um novo
         });
     };
 
@@ -41,11 +41,11 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
             return contato.selecionado;
         });
     };
-    
+
     $scope.ordenarPor = function (campo) {
         $scope.criterioDeOrdenacao = campo;
         $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
     };
-    
+
     generateSerial($scope.contatos);
-})
+});
