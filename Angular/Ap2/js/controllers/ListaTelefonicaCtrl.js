@@ -1,10 +1,10 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator, contatosAPI) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator, contatosAPI, operadorasAPI) {
 
     console.log("contatos carregados", contatos);
     console.log("operadoras carregadas", operadoras);
 
     $scope.app = "Lista Telefonica";
-    $scope.contatos = contatos.data; // contatos já resolvidos na rota
+    $scope.contatos = contatos.data; 
     $scope.operadoras = operadoras.data;
 
     var carregarContatos = function() {
@@ -12,6 +12,12 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
             $scope.contatos = response.data;
         });
     };
+    var carregarOperadoras = function () {
+        operadorasAPI.getOperadoras().success(function (data) {
+            $scope.operadoras = data;
+        });
+    };
+
 
     var generateSerial = function (contatos) {
         contatos.forEach(function (item) {
