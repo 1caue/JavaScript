@@ -5,12 +5,17 @@ angular.module("listaTelefonica").config(function($routeProvider) {
         controller: "listaTelefonicaCtrl", 
         resolve: {
             contatos: function (contatosAPI) {
-                return contatosAPI.getContatos();
+                return contatosAPI.getContatos().then(function (response) {
+                    console.log("Contatos resolvidos", response.data);
+                    return response;
+                });
             },
             operadoras: function (operadorasAPI) {
-                return operadorasAPI.getOperadoras();
+                return operadorasAPI.getOperadoras().then(function (response) {
+                    console.log("Operadoras resolvidas", response.data);
+                    return response;
             }           
-        }
+        )}}
     });
    $routeProvider
     .when("/novoContato", {
