@@ -1,11 +1,20 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator, contatosAPI, operadorasAPI) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosRes, operadorasRes, serialGenerator, contatosAPI, operadorasAPI) {
 
-    console.log("contatos carregados", contatos);
-    console.log("operadoras carregadas", operadoras);
+    contatosAPI.getContatos().then(function(response) {
+        console.log("Contatos recebidos:", response.data);
+    });
+
+    operadorasAPI.getOperadoras().then(function(response) {
+        console.log("Operadoras recebidas:", response.data);
+    });
+
+
+    console.log("contatos carregados", contatosRes);
+    console.log("operadoras carregadas", operadorasRes);
 
     $scope.app = "Lista Telefonica";
-    $scope.contatos = contatos.data; 
-    $scope.operadoras = operadoras.data;
+    $scope.contatos = contatosRes.data; 
+    $scope.operadoras = operadorasRes.data;
 
     var carregarContatos = function() {
         contatosAPI.getContatos().then(function (response) {
