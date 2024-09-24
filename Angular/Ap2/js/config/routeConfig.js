@@ -4,19 +4,16 @@ angular.module("listaTelefonica").config(function($routeProvider) {
         templateUrl: "view/contatos.html",
         controller: "listaTelefonicaCtrl", 
         resolve: {
-            contatos: function (contatosAPI) {
-                return contatosAPI.getContatos().then(function (response) {
-                    console.log("Contatos resolvidos", response.data);
-                    return response;
-                });
-            },
-            operadoras: function (operadorasAPI) {
-                return operadorasAPI.getOperadoras().then(function (response) {
-                    console.log("Operadoras resolvidas", response.data);
-                    return response;
-            }           
-        )}}
-    });
+                contatosRes: function (contatosAPI) {
+                    console.log(contatosAPI)
+                    return contatosAPI.getContatos();
+                },
+                operadorasRes: function (operadorasAPI) {
+                    console.log(operadorasAPI)
+                    return operadorasAPI.getOperadoras();
+                }
+            }
+    })
    $routeProvider
     .when("/novoContato", {
         templateUrl: "view/novoContato.html",
