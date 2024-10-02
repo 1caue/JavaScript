@@ -3,6 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 
+app.use(bodyParser.json());
+
 const contatos = [
     {
         "nome": "Bruno Felipe de Oliveira",
