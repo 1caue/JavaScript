@@ -1,7 +1,11 @@
 angular.module("listaTelefonica").factory("timestampIntercetor", function () {
     return {
         request: function (config) {
-            console.log(config)
+            var url = config.url;
+            if (url.indexOf('view') > -1) return config;
+            var timestamp = new Date().getTime();
+            console.log("Essa foi a url encontrada:" + config.url)
+            config.url = url + "?timestamp=" + timestamp;
             return config;
         }
     };
