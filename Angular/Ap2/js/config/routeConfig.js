@@ -26,15 +26,6 @@ angular.module("listaTelefonica").config(function ($routeProvider) {
 	});
 	$routeProvider.when("/error", {
 		templateUrl: "view/error.html",
-		controller: "listaTelefonicaCtrl",
-		resolve: {
-			contatos: function (contatosAPI) {
-				return contatosAPI.getContatos();
-			},
-			operadoras: function (operadorasAPI) {
-				return operadorasAPI.getOperadoras();
-			}
-		}
 	});
 	$routeProvider.otherwise({redirectTo: "/contatos"});
 });
