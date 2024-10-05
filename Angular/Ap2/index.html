@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="listaTelefonica">
 <head>
+    
     <meta charset="UTF-8">
     <title>Lista Telefonica</title>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
@@ -28,11 +29,16 @@
     <script src="js/Interceptors/timestampInterceptor.js"></script>
     <script src="js/Interceptors/errorInterceptor.js"></script>
     <script src="js/config/interceptorsConfig.js"></script>
+    <script src="js/Interceptors/loadingInterceptor.js"></script>
 
 </head>
-
 <body>
-    <div ng-view></div>
-    <div ng-include="'view/footer.html'"></div>
+    <div class="jumbotron" ng-show="loading">
+        <h5>Carregando, por favor favor aguarde...</h5>
+    </div>
+    <div ng-hide="loading">
+        <div ng-view></div>
+        <div ng-include="'view/footer.html'"></div>
+    </div>
 </body>
 </html>
