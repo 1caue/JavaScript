@@ -13,7 +13,8 @@ const contatos = [
         "operadora": {
             "nome": "Oi",
             "codigo": 14,
-            "categoria": "Celular"
+            "categoria": "Celular",
+        "preco": 2
         }
     },
     {
@@ -23,7 +24,8 @@ const contatos = [
         "operadora": {
             "nome": "Vivo",
             "codigo": 15,
-            "categoria": "Celular"
+            "categoria": "Celular",
+        "preco": 3
         }
     },
     {
@@ -33,7 +35,8 @@ const contatos = [
         "operadora": {
             "nome": "Tim",
             "codigo": 41,
-            "categoria": "Celular"
+            "categoria": "Celular",
+        "preco": 6
         }
     },
     {
@@ -43,7 +46,8 @@ const contatos = [
         "operadora": {
             "nome": "Vivo",
             "codigo": 15,
-            "categoria": "Celular"
+            "categoria": "Celular",
+        "preco": 4
         }
     }
 ];
