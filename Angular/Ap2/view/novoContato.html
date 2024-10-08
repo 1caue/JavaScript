@@ -8,7 +8,7 @@
         <input class="form-control" type="text" ng-model="contato.data" name="data" placeholder="Data" ui-date />
 
         <select class="form-control" ng-model="contato.operadora"
-            ng-options="operadora.nome + ' (' + (operadora.preco | currency) + ')' for operadora in operadoras | orderBy:'nome'">
+            ng-options="operadora.nome + ' (' + (operadora.preco | currency:'R$':2) + ')' for operadora in operadoras | orderBy:'nome'">
             <option value="">Selecione uma Operadora</option>
         </select>
     </form>
