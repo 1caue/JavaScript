@@ -24,7 +24,7 @@
             
             <td>{{contato.telefone}}</td>
             <td>{{contato.operadora.nome}}</td>
-            <td>{{contato.operadora.preco | currency}}</td>
+            <td>{{contato.operadora.precoComImposto | currency}}</td>
             <td>{{contato.data | date:'MMM EEEE dd/MM/yyyy HH:mm'}}</td>
             <td>
                 <div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.cor}"></div>
