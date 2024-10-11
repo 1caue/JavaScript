@@ -4,7 +4,8 @@
         {{error}}
     </ui-alert>
 
-    <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?">
+    <input class="form-control" type="text" ng-model="criterioDeBusca" 
+    ng-model-options="{ updateOn:'blur', debounce:{default: 500, blur: 0}}" placeholder="O que você está buscando?">
     <table ng-show="contatos.length > 0" class="table table-striped">
         <tr>
             <th></th>
@@ -21,7 +22,7 @@
                 ng-click="verificarContatoSelecionado(contatos)"/></td>
             <td>{{contato.serial}}</td>
             
-            <td>{{contato.nome | name | ellipsis:10}}</td>
+            <td>{{::contato.nome | name | ellipsis:10}}</td>
             
             <td>{{contato.telefone}}</td>
             <td>{{::contato.operadora.nome}}</td>
