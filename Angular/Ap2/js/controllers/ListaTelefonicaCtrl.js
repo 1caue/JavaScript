@@ -27,12 +27,22 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
         return preco * imposto;
     };
 
+    var init = function () {
+        calcularImposto($scope.contatos);
+        generateSerial($scope.contatos);
+        $scope.contatos.push($scope.contatos[0]);
+    };
+
     var calcularImposto = function (contatos) {
         contatos.forEach(function (item) {
             if (item.operadora && item.operadora.preco) {
                 item.operadora.precoComImposto = $scope.calcularImposto(item.operadora.preco);
             }
         });
+    };
+
+    $scope.reset = function () {
+        $scope.contatos = angular.copy($scope.contatos);
     };
 
     var generateSerial = function(contatos) {
