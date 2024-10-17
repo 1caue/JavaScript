@@ -7,16 +7,15 @@
             <option >Pessoa Jurídica</option>
         </select>
 
-        <div ng-if="contato.tipo === 'Pessoa Física'">
-            
+        <div ng-show="contato.tipo === 'Pessoa Física'">
             <input class="form-control" type="text" ng-model="contato.nome" name="nome" 
             placeholder="Nome" ng-required="true" ng-minlength="4" />
+           
             <input class="form-control" type="text" ng-model="contato.cpf" name="cpf" 
             placeholder="CPF" ng-required="true" ng-minlength="4" />
-        
         </div>
 
-        <div ng-if="contato.tipo === 'Pessoa Jurídica'">
+        <div ng-show="contato.tipo === 'Pessoa Jurídica'">
             <input class="form-control" type="text" ng-model="contato.nomeFantasia" name="nomeFantasia" placeholder="Nome Fantasia" ng-required="true"
             ng-minlength="4" />
 
@@ -24,7 +23,7 @@
              placeholder="CNPJ" ng-required="true">
 
              <input class="form-control" type="text" ng-model="contato.razaoSocial" name="razaoSocial"
-             placeholder="Razao Social" ng-required="true">
+             placeholder="Razão Social" ng-required="true">
         </div>
 
 
