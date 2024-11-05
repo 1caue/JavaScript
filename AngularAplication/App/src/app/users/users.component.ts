@@ -9,6 +9,7 @@ export class UsersComponent {
   users: string[] = [
     'VIni',
     'Julio',
-    'Larissa'
+    'Larissa',
+    'Pedro'
   ];
 }
