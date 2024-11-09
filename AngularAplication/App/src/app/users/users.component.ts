@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../../_models/user';
+import { User } from 'src/app/_models/user';
 
 @Component({
   selector: 'app-users',
@@ -27,4 +27,3 @@ export class UsersComponent {
     }
   ]
 }
-//C:\Users\CAUÊ\Documents\JS\AngularAplication\App\src\app\_models\user.ts
