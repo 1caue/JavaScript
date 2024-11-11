@@ -8,6 +8,7 @@ import { User } from 'src/app/_models/user';
 })
 export class UsersComponent {
   // users: string[] = ['VIni', 'Julio', 'Larissa', 'Pedro'];
+  userSelecionado: User | undefined;
   users: User[] = [
     {
       nome: 'Vini',
@@ -25,5 +26,9 @@ export class UsersComponent {
       nome: 'Pedro',
       idade: 19
     }
-  ]
+  ];
+
+  infoUserSelecionado(user: User) {
+    this.userSelecionado = user;
+  }
 }
