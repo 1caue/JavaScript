@@ -10,6 +10,7 @@ import { BaseuiComponent } from './_components/baseui/baseui.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './_components/user/user.component';
 import { UserCardComponent } from './_components/user-card/user-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserCardComponent } from './_components/user-card/user-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
