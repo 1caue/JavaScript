@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { User } from 'src/app/_models/user';
 
 @Component({
@@ -9,6 +10,10 @@ import { User } from 'src/app/_models/user';
 export class UsersComponent {
   // users: string[] = ['VIni', 'Julio', 'Larissa', 'Pedro'];
   userSelecionado: User | undefined;
+  userForm: FormGroup = new FormGroup({});
+
+  constructor (private fb: FormBuilder) {}
+
   users: User[] = [
     {
       nome: 'Vini',
