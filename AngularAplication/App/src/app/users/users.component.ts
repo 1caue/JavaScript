@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/_models/user';
 
 @Component({
@@ -7,12 +7,33 @@ import { User } from 'src/app/_models/user';
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
   // users: string[] = ['VIni', 'Julio', 'Larissa', 'Pedro'];
   userSelecionado: User | undefined;
   userForm: FormGroup = new FormGroup({});
 
   constructor (private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+   this.initializeForm();
+  }
+
+  initializeForm () {
+    this.userForm = this.fb.group({
+      nome: ['', [Validators.required, Validators.maxLength(250)]],
+      idade: [
+        '', 
+        [Validators.required, Validators.min(12), Validators.max(110)]
+      ],
+    });
+  }
+
+  SubmitForm() {
+    if (this.userForm.valid) {
+      console.log(this.userForm.value);
+    }
+    
+  }
 
   users: User[] = [
     {
