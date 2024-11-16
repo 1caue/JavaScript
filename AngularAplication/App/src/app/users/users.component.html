@@ -1,23 +1,52 @@
 <form [formGroup]="userForm" class="mb-3">
+    
     <div class="row">
-        <div class="form-group col-md-6 mb-3">
+        
+        <div class="form-group col-md-6">
             <label for="nome">Nome:</label>
             <input 
             id="nome" 
             type="text" 
-            class="form=control" 
-            formControlName="nome"/>
+            class="form-control is-invalid" 
+            [class.is-invalid]="userForm.get('nome')?.errors && userForm.get('nome')?.touched"
+            formControlName="nome"
+            />
         </div>
-        <div class="form-group col-md-3 mb-3">
+        
+        <div *ngIf="userForm.get('nome')?.hasError('required')" 
+        class="invailid-feedback">
+            O campo nome é obrigatório
+        </div>
+        
+        <div *ngIf="userForm.get('nome')?.hasError('maxlength')" 
+        class="invailid-feedback">
+            O campo nome não pode ultrapassar de 250 caracteres
+        </div>
+
+        <div class="form-group col-md-3">
             <label for="nome">Idade:</label>
             <input 
             id="nome" 
             type="number" 
-            class="form=control" 
-            formControlName="idade"/>
+            class="form-control" 
+            formControlName="idade"
+            [class.is-invalid]="userForm.get('idade')?.errors && userForm.get('idade')?.touched"
+            />
+            <div *ngIf="userForm.get('idade')?.hasError('required')" 
+                class="invailid-feedback">
+                O campo idade é obrigatório
+            </div>
+        
+            <div *ngIf="userForm.get('idade')?.hasError('min') || 
+                userForm.get('idade')?.hasError('max')" 
+                class="invailid-feedback">
+                O campo idade deve ser entre 12 a 110 anos
+            </div>
+
         </div>
     </div>
-    <button (click)="SubmitForm()" class="btn btn-success mt-1" >Incluir</button>
+    
+    <button [disabled]="!userForm.valid" (click)="SubmitForm()" class="btn btn-success mt-3" >Incluir</button>
 </form>
 
 <div class="row">
