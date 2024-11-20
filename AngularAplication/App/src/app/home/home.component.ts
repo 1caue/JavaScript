@@ -1,18 +1,22 @@
-import { Component, DoCheck, OnDestroy } from '@angular/core';
+import { Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
+import { UserService } from '../_components/_services/user.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements DoCheck {
-  num: number = 1;
+export class HomeComponen implements OnInit {
   
-  ngDoCheck(): void {
-    console.log('Uma mudança foi feita')
+  constructor(private userService: UserService) {
+
+  }
+  
+  ngOnInit(): void {
+    
   }
 
-  adiciona1() {
-    this.num++;
+  getGitUser () {
+    this.userService.getGitUser('facebook')
   }
 }
