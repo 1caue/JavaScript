@@ -7,6 +7,8 @@ import { UserService } from './_components/_services/user.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
+  title = 'my-app';
+  
   ngOnInit(): void {
     this.getUser()
   }

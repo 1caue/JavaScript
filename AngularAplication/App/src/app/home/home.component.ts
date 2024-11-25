@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
+import { Component, DoCheck, OnDestroy, OnInit, ɵɵsetComponentScope } from '@angular/core';
 import { UserService } from '../_components/_services/user.service';
 
 @Component({
@@ -6,17 +6,22 @@ import { UserService } from '../_components/_services/user.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponen implements OnInit {
+export class HomeComponent implements OnInit {
   
   constructor(private userService: UserService) {
 
   }
   
   ngOnInit(): void {
-    
+    this.getGitUser();
   }
 
-  getGitUser () {
-    this.userService.getGitUser('facebook')
+  async getGitUser() {
+    try {
+      const response = await this.userService.getGitUser('facebook').toPromise();
+      return console.log('Response:', response);
+    } catch (error) {
+      return console.error('Error:', error);
+    }
   }
 }

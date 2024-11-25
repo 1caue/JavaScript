@@ -11,7 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './_components/user/user.component';
 import { UserCardComponent } from './_components/user-card/user-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {httpclient}
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
     
   ],
   providers: [],
