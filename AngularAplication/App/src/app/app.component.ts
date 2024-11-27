@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from './_components/_services/user.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    standalone: false
 })
 export class AppComponent implements OnInit {
   title = 'my-app';

@@ -4,9 +4,10 @@ import { User } from 'src/app/_models/user';
 import { UserService } from '../_components/_services/user.service';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+    selector: 'app-users',
+    templateUrl: './users.component.html',
+    styleUrls: ['./users.component.css'],
+    standalone: false
 })
 export class UsersComponent implements OnInit {
   userSelecionado: User | undefined;
