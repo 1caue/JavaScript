@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   async getGitUser() {
     try {
-      const response = await this.userService.getGitUser('facebook').toPromise();
+      const response = await this.userService.getGitUser('repos/facebook/rest').toPromise();
       return console.log('Response:', response);
     } catch (error) {
       return console.error('Error:', error);
