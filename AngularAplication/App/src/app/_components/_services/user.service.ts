@@ -11,15 +11,17 @@ export class UserService {
     baseUrl: string = environment.apiUrl;
     user: User | undefined;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+        console.log('Object', this.baseUrl);
+    }
 
     getGitUser(username: string) {
-        return this.http.get(this.baseUrl + 'users/' + username).pipe(
+        return this.http.get(this.baseUrl + "users/" + username).pipe(
             map((response: any) => {
                 console.log(response);
                 return response;
             })
-        )
+        );
     }
 
     setUser(user: User | undefined) {
