@@ -1,6 +1,5 @@
 import { Component, DoCheck, OnDestroy, OnInit, ɵɵsetComponentScope } from '@angular/core';
 import { UserService } from '../_components/_services/user.service';
-import { firstValueFrom } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -16,16 +15,17 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(): void {
     this.getGitUser();
+    console.log('Initializing HomeComponent....')
   }
 
   getGitUser() {
-    this.userService.getGitUser('mrtrycatch').subscribe(
-      (response) => {
-        console.log('Response in Component:', response); // Aqui, você verá o objeto retornado.
-      },
-      (error) => {
-        console.error('Error:', error); // Trate erros de forma adequada.
-      }
-    );
-  }
+    this.userService.getGitUser('facebook').subscribe({
+        next: (response) => {
+            console.log('API Object:', response); // Verifica o retorno
+        },
+        error: (error) => {
+            console.error('API Error:', error); // Captura erros
+        },
+    });
+}
 }
