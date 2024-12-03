@@ -17,11 +17,8 @@ export class UserService {
     }
     
     getGitUser(username: string) {
-        return this.http.get(this.baseUrl + "users/" + username).pipe(
-            map((response: any) => {
-                return response;
-            })
-        );
+        console.log('Fetching:', `${this.baseUrl}users/${username}`);
+        return this.http.get<User>(`${this.baseUrl}users/${username}`);
     }
     
     setUser(user: User | undefined) {

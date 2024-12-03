@@ -1,0 +1,11 @@
+<div *ngIf="user">
+    <h2>{{ user.name }} ({{ user.login }})</h2>
+    <img [src]="user.avatar_url" alt="{{ user.login }}" width="100">
+    <p><strong>Bio:</strong> {{ user.bio }}</p>
+    <p><strong>Location:</strong> {{ user.location }}</p>
+    <p><strong>Public Repos:</strong> {{ user.public_repos }}</p>
+    <p><strong>Followers:</strong> {{ user.followers }}</p>
+    <p><strong>Following:</strong> {{ user.following }}</p>
+    <p><strong>Blog:</strong> <a [href]="user.blog" target="_blank">{{ user.blog }}</a></p>
+  </div>
+  
